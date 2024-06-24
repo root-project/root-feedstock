@@ -36,7 +36,6 @@ source:
     - patches/0001-Patch-for-apple-silicon.patch
     - patches/0001-Set-LLVM_REQUIRES_EH-for-Cling.patch
     - patches/disable-hsimple.root  # [build_platform != target_platform]
-    - patches/0001-Reset-CMAKE-module-path-for-interpreter.patch
     - patches/0001-force-one-modulemap-for-darwin.patch  # [osx]
     - patches/0001-Remove-check-for-SDK-version-in-CIFactory.patch  # [osx]
     - patches/0001-avoid-linking-TPython-against-libPython.patch  # [osx]
