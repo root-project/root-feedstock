@@ -1,0 +1,43 @@
+From 50ab40c2afa280fabd9a5c58b914375eb7192f85 Mon Sep 17 00:00:00 2001
+From: Vincenzo Eduardo Padulano <vincenzo.eduardo.padulano@cern.ch>
+Date: Mon, 24 Jun 2024 15:33:22 +0200
+Subject: [PATCH] disable hsimple.root
+
+---
+ CMakeLists.txt | 20 --------------------
+ 1 file changed, 20 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1f9bd2eff2..685d980b51 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -599,26 +599,6 @@ if(runtime_cxxmodules)
+   set_directory_properties(PROPERTIES ADDITIONAL_CLEAN_FILES "${library_output_dir}/modules.timestamp")
+ endif()
+ 
+-#---hsimple.root---------(use the executable for clearer dependencies and proper return code)---
+-add_custom_target(hsimple ALL DEPENDS tutorials/hsimple.root)
+-add_dependencies(hsimple onepcm)
+-if(WIN32)
+-  set(hsimple_cmd COMMAND ${CMAKE_COMMAND} -E env PATH="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}\\\;%PATH%"
+-                          ROOTIGNOREPREFIX=1 ROOT_HIST=0 $<TARGET_FILE:root.exe> -l -q -b -n -x hsimple.C -e return)
+-else()
+-  set(hsimple_cmd COMMAND ${MODULES_ROOT_INCPATH} ${ld_library_path}=${CMAKE_LIBRARY_OUTPUT_DIRECTORY}:$ENV{${ld_library_path}}
+-                          ROOTIGNOREPREFIX=1 ROOT_HIST=0 $<TARGET_FILE:root.exe> -l -q -b -n -x hsimple.C -e return)
+-endif()
+-add_custom_command(OUTPUT tutorials/hsimple.root
+-                   ${hsimple_cmd}
+-                   WORKING_DIRECTORY tutorials
+-                   DEPENDS $<TARGET_FILE:root.exe> Cling Hist Tree Gpad Graf HistPainter move_artifacts)
+-install(FILES ${CMAKE_BINARY_DIR}/tutorials/hsimple.root DESTINATION ${CMAKE_INSTALL_TUTDIR} COMPONENT tests)
+-
+-if(runtime_cxxmodules)
+-  add_dependencies(hsimple modules_idx)
+-endif()
+-
+ #---version--------------------------------------------------------------------------------------
+ if(NOT WIN32)
+ add_custom_target(version COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/build/unix/makeversion.py
+-- 
+2.45.1
+
