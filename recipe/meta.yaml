@@ -1,9 +1,9 @@
 {% set name = "root" %}
-{% set tag_name = "6-32-02" %}
+{% set tag_name = "master" %}
 {% set version = ".".join(tag_name.split("-")|map("int")|map("string")) %}
 {% set build_number = 2 %}
 {% set clang_version = "16.0.6" %}
-{% set clang_patches_version = "root_63202" %}
+{% set clang_patches_version = "root_master" %}
 
 {% set builtin_pyroot = True %}
 {% set builtin_clang = False %}
