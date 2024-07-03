@@ -157,7 +157,7 @@ fi
 #     export CXXFLAGS="${CXXFLAGS} -march=nehalem"
 # fi
 CMAKE_PLATFORM_FLAGS+=("-Dveccore=ON")
-CMAKE_PLATFORM_FLAGS+=("-Dvc=ON")
+CMAKE_PLATFORM_FLAGS+=("-Dvc=OFF")
 CMAKE_PLATFORM_FLAGS+=("-Dbuiltin_veccore=ON")
 
 # Disable the Python bindings if we're building them in standalone mode
