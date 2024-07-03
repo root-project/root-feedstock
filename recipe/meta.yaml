@@ -136,6 +136,9 @@ requirements:
 {% if builtin_pyroot %}
     - python
     - numpy
+    - pandas
+    - numba>=0.52
+    - cffi
 {% endif %}
   run:
 {% if builtin_pyroot %}
