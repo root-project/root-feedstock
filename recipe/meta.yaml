@@ -167,6 +167,14 @@ requirements:
     - root5 9999
 
 test:
+  requires:
+    # Taken from roottest's requirements.txt
+    - IPython
+    - jupyter
+    - pytest
+    - nbconvert!=7.3.*
+    - pandas
+    - setuptools
   files:
     - test.cpp
   commands:
