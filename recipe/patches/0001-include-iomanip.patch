@@ -1,0 +1,37 @@
+From 343edae39809a2364550b86e1db42249e5c4f3d3 Mon Sep 17 00:00:00 2001
+From: Vincenzo Eduardo Padulano <vincenzo.eduardo.padulano@cern.ch>
+Date: Wed, 17 Jul 2024 10:00:20 +0200
+Subject: [PATCH] include iomanip
+
+---
+ math/mathcore/test/testGradient.cxx                 | 1 +
+ roofit/roofitcore/test/testRooRombergIntegrator.cxx | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/math/mathcore/test/testGradient.cxx b/math/mathcore/test/testGradient.cxx
+index 49a5391b7b..4fbdc22599 100644
+--- a/math/mathcore/test/testGradient.cxx
++++ b/math/mathcore/test/testGradient.cxx
+@@ -25,6 +25,7 @@
+ #include <chrono>
+ #include <iostream>
+ #include <string>
++#include <iomanip>
+ 
+ int printLevel = 0;
+ 
+diff --git a/roofit/roofitcore/test/testRooRombergIntegrator.cxx b/roofit/roofitcore/test/testRooRombergIntegrator.cxx
+index 6ec8c63ecc..f5c88e1ac5 100644
+--- a/roofit/roofitcore/test/testRooRombergIntegrator.cxx
++++ b/roofit/roofitcore/test/testRooRombergIntegrator.cxx
+@@ -17,6 +17,7 @@
+ 
+ #include <numeric>
+ #include <algorithm>
++#include <iomanip>
+ 
+ #include "../src/RooRombergIntegrator.h"
+ 
+-- 
+2.45.2
+

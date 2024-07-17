@@ -38,6 +38,7 @@ source:
     - patches/0001-force-one-modulemap-for-darwin.patch  # [osx]
     - patches/0001-Remove-check-for-SDK-version-in-CIFactory.patch  # [osx]
     - patches/0001-avoid-linking-TPython-against-libPython.patch  # [osx]
+    - patches/0001-include-iomanip.patch
 {% if not builtin_pyroot %}
     - patches/0001-Support-standalone-pyroot.patch
 {% endif %}
