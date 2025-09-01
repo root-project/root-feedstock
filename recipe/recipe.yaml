@@ -1,9 +1,9 @@
 context:
   name: root
-  tag_name: 6-36-04
+  tag_name: master
   build_number: 0
   clang_version: 18.1.8
-  clang_patches_version: root_63604
+  clang_patches_version: root_master
   builtin_pyroot: true
   builtin_clang: false
   run_gtests: false
@@ -18,8 +18,7 @@ recipe:
   version: ${{ tag_name | replace("-", ".") }}
 
 source:
-  url: https://github.com/root-project/root/archive/refs/tags/v${{ tag_name }}.tar.gz
-  sha256: 65a246d2578d2f04f7ad400a26cfc6c7c9c19878434a3d8f4d0bcf7deec4f2ec
+  git: https://github.com/root-project/root.git
   target_directory: root-source
   patches:
     - patches/0001-disable-cling-sysroot-at-runtime.patch
